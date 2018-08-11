@@ -1,0 +1,29 @@
+{
+  "name": "react-router-with-scroll",
+  "version": "1.0.0",
+  "description": "Allows to set up conditional scrolling with react router with ease.",
+  "main": "index.js",
+  "repository": "git@github.com:j-u-p-iter/react-router-with-scroll.git",
+  "author": "Leontyev Kirill (j.u.p.iter) <pn79122821224@gmail.com> (http://j-u-p-iter.pro/)",
+  "license": "MIT",
+  "scripts": {
+    "test": "kcd-scripts test",
+    "precommit": "kcd-scripts precommit"
+  },
+  "devDependencies": {
+    "history": "^4.7.2",
+    "jest": "^23.5.0",
+    "kcd-scripts": "^0.41.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "next",
+    "react-testing-library": "^5.0.0",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2"
+  }
+}
