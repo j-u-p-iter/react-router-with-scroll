@@ -1,6 +1,6 @@
 {
-  "name": "react-router-with-scroll",
-  "version": "1.0.0",
+  "name": "@j.u.p.iter/react-router-with-scroll",
+  "version": "1.0.1",
   "description": "Allows to set up conditional scrolling with react router with ease.",
   "main": "index.js",
   "repository": "git@github.com:j-u-p-iter/react-router-with-scroll.git",
