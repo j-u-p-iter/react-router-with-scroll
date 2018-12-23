@@ -1,29 +1,42 @@
 {
   "name": "@j.u.p.iter/react-router-with-scroll",
-  "version": "1.0.2-beta.0",
+  "version": "0.0.0-semantically-released",
   "description": "Allows to set up conditional scrolling with react router with ease.",
-  "main": "index.js",
+  "keywords": [
+    "react-router",
+    "scroll",
+    "hoc"
+  ],
+  "main": "dist/lib/react-router-with-scroll.cjs.js",
+  "module": "dist/lib/react-router-with-scroll.esm.js",
+  "umd:main": "dist/lib/react-router-with-scroll.umd.min.js",
+  "source": "dist/lib/react-router-with-scroll.js",
+  "typings": "dist/types",
   "repository": "git@github.com:j-u-p-iter/react-router-with-scroll.git",
   "author": "Leontyev Kirill (j.u.p.iter) <pn79122821224@gmail.com> (http://j-u-p-iter.pro/)",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "scripts": {
-    "test": "kcd-scripts test",
-    "precommit": "kcd-scripts precommit"
+    "commit": "jupiter-scripts precommit --allowJs",
+    "build": "jupiter-scripts build --bundle",
+    "start": "yarn run build --watch",
+    "lint": "jupiter-scripts lint --format codeFrame",
+    "lint:fix": "yarn run lint --fix",
+    "test": "jupiter-scripts test"
   },
   "devDependencies": {
-    "history": "^4.7.2",
-    "jest": "^23.5.0",
-    "kcd-scripts": "^0.41.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "react-router-redux": "next",
-    "react-testing-library": "^5.0.0",
-    "redux": "^4.0.0",
-    "redux-saga": "^0.16.0"
+    "@j.u.p.iter/jupiter-scripts": "1.4.0",
+    "@j.u.p.iter/react-test-utils": "1.1.1",
+    "@types/react": "^16.7.17",
+    "@types/react-router": "^4.4.3",
+    "react": "^16.4.2"
+  },
+  "peerDependencies": {
+    "react": "^16.4.2"
   },
   "dependencies": {
-    "prop-types": "^15.6.2"
+    "@j.u.p.iter/node-utils": "1.0.0"
   }
 }
