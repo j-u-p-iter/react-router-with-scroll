@@ -1,16 +1,18 @@
 language: node_js
-cache:
-  directories:
-    - ~/.npm
 notifications:
   email: false
-node_js:
-  - '10'
-  - '9'
-  - '8'
-  - '6'
-after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
 branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  only:
+    - master
+node_js:
+  - '8'
+jobs:
+  include:
+    - stage: validate
+      script: jupiter-scripts validate
+    - stage: deploy
+      script: yarn run build
+      after_success: jupiter-scripts deploy
+stages:
+  validate
+  deploy
