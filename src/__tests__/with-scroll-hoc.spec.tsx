@@ -1,14 +1,14 @@
 import {
-  renderWithReactRouter,
-  RenderWithReactRouter
+  createWindowMock,
+  renderWithReactRouter
 } from "@j.u.p.iter/react-test-utils";
 import React from "react";
 
 import { withScrollHoc } from "../.";
 
 describe("withScrollHOC", () => {
-  let renderData: ReturnType<RenderWithReactRouter>;
-  let windowScrollToMock: any;
+  let renderData: ReturnType<typeof renderWithReactRouter>;
+  let windowScrollToMock: ReturnType<typeof createWindowMock>;
   let firstDisabledPath: string;
   let secondDisabledPath: string;
   const coordinatesScrollTo = [0, 0];
@@ -17,9 +17,7 @@ describe("withScrollHOC", () => {
     const pathsWithDisabledScroll = ["/", "/some-path"];
     [firstDisabledPath, secondDisabledPath] = pathsWithDisabledScroll;
 
-    windowScrollToMock = jest
-      .spyOn(window, "scrollTo")
-      .mockImplementation(() => {});
+    windowScrollToMock = createWindowMock("scrollTo");
 
     renderData = renderWithReactRouter(
       withScrollHoc(pathsWithDisabledScroll)(() => <div>Hello</div>)

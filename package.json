@@ -28,13 +28,17 @@
   },
   "devDependencies": {
     "@j.u.p.iter/jupiter-scripts": "1.4.0",
-    "@j.u.p.iter/react-test-utils": "1.1.1",
+    "@j.u.p.iter/react-test-utils": "1.2.0",
     "@types/react": "^16.7.17",
     "@types/react-router": "^4.4.3",
-    "react": "^16.4.2"
+    "react": "^16.4.2",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1"
   },
   "peerDependencies": {
-    "react": "^16.4.2"
+    "react": ">=16.4.2",
+    "react-dom": ">=16.7.0",
+    "react-router-dom": ">=4.3.1"
   },
   "dependencies": {
     "@j.u.p.iter/node-utils": "1.0.0"

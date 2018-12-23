@@ -1,18 +1,16 @@
 import {
-  renderWithReactRouter,
-  RenderWithReactRouter
+  createWindowMock,
+  renderWithReactRouter
 } from "@j.u.p.iter/react-test-utils";
 import React from "react";
 
 import { withScrollHocFactory } from "../.";
 
 describe("withScrollFactory", () => {
-  let windowScrollToMock: any;
+  let windowScrollToMock: ReturnType<typeof createWindowMock>;
 
   beforeAll(() => {
-    windowScrollToMock = jest
-      .spyOn(window, "scrollTo")
-      .mockImplementation(() => {});
+    windowScrollToMock = createWindowMock("scrollTo");
   });
 
   describe("when disableScrollStrategy returns false", () => {
@@ -21,7 +19,7 @@ describe("withScrollFactory", () => {
       const defaultPath = "/";
       const disableScrollStrategy = jest.fn(() => false);
       const renderResult: ReturnType<
-        RenderWithReactRouter
+        typeof renderWithReactRouter
       > = renderWithReactRouter(
         withScrollHocFactory(disableScrollStrategy)(() => <div>Hello</div>)
       );
@@ -61,7 +59,7 @@ describe("withScrollFactory", () => {
       const pathToGo = "/some-path";
       const disableScrollStrategy = jest.fn(() => true);
       const renderResult: ReturnType<
-        RenderWithReactRouter
+        typeof renderWithReactRouter
       > = renderWithReactRouter(
         withScrollHocFactory(disableScrollStrategy)(() => <div>Hello</div>)
       );
